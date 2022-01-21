@@ -75,17 +75,17 @@ s = MinMaxScaler()
 df_norm = s.fit_transform(df_norm)
 input_df = s.transform(input_df)
 
-# Reads in saved random forest classification model
-load_clf = pickle.load(open('finalized_model_forest.pkl', 'rb'))
+# Reads in saved neural network model
+load_clf = pickle.load(open('finalized_model.pkl', 'rb'))
 
 # Apply model to make predictions
 prediction = load_clf.predict(input_df)
 prediction_proba = load_clf.predict_proba(input_df)
 
 
-st.subheader('Prediction (Random Forest)')
+st.subheader('Prediction')
 diab_pred = np.array(['NO DEATH','DEATH'])
 st.write(diab_pred[prediction])
 
-st.subheader('Prediction Probability (Random Forest)')
+st.subheader('Prediction Probability')
 st.write(prediction_proba)
