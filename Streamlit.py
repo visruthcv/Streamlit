@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit_theme as stt
+#import streamlit_theme as stt
 import pandas as pd
 import numpy as np
 import pickle
